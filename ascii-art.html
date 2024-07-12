@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art</title>
+</head>
+<body>
+    <pre id="ascii-art">
+    </pre>
+
+    <script>
+        fetch('/ascii-art')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('ascii-art').textContent = data;
+            })
+            .catch(error => console.error('Error fetching ASCII art:', error));
+    </script>
+</body>
+</html>
